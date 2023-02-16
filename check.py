@@ -15,9 +15,9 @@ domain = str(os.environ.get("DOMAIN")).split(",")
 
 for d in domain:
     x = requests.post('https://check-host.net/check-http?host='+d+'&node=ir4.node.check-host.net&node=ir3.node.check-host.net&node=ir1.node.check-host.net',headers={'Accept': 'application/json'})
-    send(x.json()["request_id"])
+    #send(x.json()["request_id"])
     time.sleep(10)
     xx = requests.post('https://check-host.net/check-result/'+x.json()["request_id"],headers={'Accept': 'application/json'})
-    send(xx.text)
+    #send(xx.text)
     if "Connection timed out" in xx.text:
-        send("ITS FUCKEDDDD⚠️⚠️⚠️⚠️⚠️⚠️")
+        send(d+" ITS FUCKEDDDD⚠️⚠️⚠️⚠️⚠️⚠️")
