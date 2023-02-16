@@ -10,11 +10,7 @@ def send(bot_message):
        return response.json()
 
 domain = []
-domain[0] = os.environ.get("DOMAIN")
-domain[1] = os.environ.get("DOMAIN1")
-domain[2] = os.environ.get("DOMAIN2")
-domain[3] = os.environ.get("DOMAIN3")
-domain[4] = os.environ.get("DOMAIN4")
+domain = str(os.environ.get("DOMAIN")).split(",")
 
 
 for d in domain:
