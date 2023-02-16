@@ -11,5 +11,5 @@ def send(bot_message):
 
 x = requests.post('https://check-host.net/check-http?host=albalo.store:443&node=ir4.node.check-host.net&node=ir3.node.check-host.net&node=ir1.node.check-host.net',headers={'Accept': 'application/json'})
 #send(x.json()["requestid"])
-xx = requests.post('https://check-host.net/check-result/'+x.json()["requestid"],headers={'Accept': 'application/json'})
+xx = requests.post('https://check-host.net/check-result/'+x.json()["request_id"],headers={'Accept': 'application/json'})
 send(xx.text)
