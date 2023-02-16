@@ -1,4 +1,4 @@
-import requests,os,json,sys
+import requests,os,json,sys,time
     
 def send(bot_message):
        bot_token = os.environ.get("TOKEN")
@@ -11,5 +11,6 @@ def send(bot_message):
 
 x = requests.post('https://check-host.net/check-http?host=albalo.store:443&node=ir4.node.check-host.net&node=ir3.node.check-host.net&node=ir1.node.check-host.net',headers={'Accept': 'application/json'})
 send(x.json()["request_id"])
+time.sleep(10)
 xx = requests.post('https://check-host.net/check-result/'+x.json()["request_id"],headers={'Accept': 'application/json'})
 send(xx.text)
